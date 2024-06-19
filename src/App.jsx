@@ -28,6 +28,7 @@ function App() {
         <Route path="/terms_of_work" element={<Terms />} />
         <Route path="/:name/:id" element={<ServiceDet />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/notFound" element={<NotFound />} />
       </Routes>
       <Footer />
     </Providers>
