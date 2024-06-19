@@ -1,0 +1,35 @@
+import { ThemeProvider } from "next-themes";
+import { createContext, useEffect, useState } from "react";
+import en from "../messages/en.js";
+import ar from "../messages/ar.js";
+
+export const Lang = createContext();
+
+// eslint-disable-next-line react/prop-types
+export function Providers({ children }) {
+  const [lang, setLang] = useState("");
+  const [data, setData] = useState(en);
+  const [mounted, setMounted] = useState(true);
+
+  useEffect(() => {
+    if (
+      !localStorage.getItem("lang") ||
+      localStorage.getItem("lang") === "en"
+    ) {
+      setLang("en");
+      setData(en);
+    } else {
+      setLang("ar");
+      setData(ar);
+    }
+    document.body.classList.toggle("ar", lang === "ar");
+  }, [lang]);
+
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <Lang.Provider value={{ lang, setLang, data, mounted, setMounted }}>
+        {children}
+      </Lang.Provider>
+    </ThemeProvider>
+  );
+}

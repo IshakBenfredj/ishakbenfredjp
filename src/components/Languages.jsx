@@ -1,0 +1,30 @@
+/* eslint-disable react/prop-types */
+import { useContext, useEffect } from "react";
+import { GrLanguage } from "react-icons/gr";
+import { Lang } from "../context/Providers";
+
+export default function Languages({ closeNavFunc }) {
+  // const [mounted, setMounted] = useState(true);
+  const { lang, setLang,mounted, setMounted } = useContext(Lang);
+
+  useEffect(() => {
+    setMounted(false);
+  }, []);
+
+  const changeLang = () => {
+    const newLang = lang === "en" ? "ar" : "en";
+    localStorage.setItem("lang", newLang);
+    document.body.classList.toggle("ar", newLang === "ar");
+    setLang(newLang);
+  };
+
+  return (
+    <div
+      className="flex items-center justify-center gap-2 capitalize hover:text-secondary cursor-pointer"
+      onClick={changeLang}
+    >
+      {!mounted && <p>{lang === "en" ? "ar" : "en"}</p>}
+      <GrLanguage size={24} onClick={closeNavFunc} />
+    </div>
+  );
+}

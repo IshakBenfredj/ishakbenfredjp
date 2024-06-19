@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  ::selection {
+    @apply text-secondary bg-gray-800;
+  }
+  .nav {
+    @apply md:flex grid grid-cols-2 justify-center items-center gap-6 text-gray-950 dark:text-white;
+  }
+  .resNav {
+    @apply dark:bg-gray-950 bg-[#fafafa] md:dark:bg-transparent md:bg-transparent rounded-bl-lg rounded-br-lg;
+  }
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+  .section {
+    @apply bg-[#fafafa] md:py-16 py-6 relative overflow-hidden bg-gradient-to-r dark:from-gray-800 dark:to-gray-950 w-full;
+  }
+  .section2 {
+    @apply bg-gray-100 md:py-16 py-6 relative overflow-hidden dark:bg-gray-950 w-full;
+  }
+  .fillBtn {
+    @apply p-3 bg-primary md:w-1/2 w-full text-white rounded-full capitalize
+     flexCenter gap-3 font-semibold border-[1px] border-primary transition-all hover:bg-primary/80;
+  }
+  .outlineBtn {
+    @apply p-3 text-primary md:w-1/2 w-full rounded-full capitalize
+     flexCenter gap-3 font-semibold border-[1px] border-primary transition-all hover:bg-primary hover:text-white;
+  }
+  .testimonialImg {
+    @apply md:w-10 w-8 bg-gray-200 dark:bg-gray-800 p-1 rounded-full border-2;
+  }
+}

@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+
+
+
+* {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body.ar pre {
+  font-family: "Tajawal", sans-serif !important;
+}
+body.ar * {
+  font-family: "Tajawal", sans-serif !important;
+  direction: rtl;
+}
+body.ar .ltr,
+body.ar .slick-list {
+  direction: ltr !important;
+}
+
+pre {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  white-space: pre-wrap;
+  overflow: inherit;
+  display: block;
+}
+
+body {
+  position: relative;
+}
+body.openNav {
+  overflow: hidden;
+}
+body.openNav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(3px);
+  z-index: 45;
+}
+
+@media (max-width: 767px) {
+  .resNav {
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    transform: translateY(-100%);
+    overflow: hidden;
+    transition: transform 0.1s ease-in;
+    z-index: 45;
+    left: 0;
+  }
+  .resNav.open {
+    transform: translateY(0);
+    top: 100%;
+  }
+}
+
+.cardBoxShadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  box-shadow: inset 0px 0px 30px 5px #242323;
+  opacity: 0.7;
+  z-index: 40;
+}
+
+/* @media (max-width: 768px) {
+  .logo-regular {
+    display: none;
+  }
+  .logo-responsive {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .logo-regular {
+    display: block;
+  }
+  .logo-responsive {
+    display: none;
+  }
+} */
+
+
+
+@media (min-width: 900px) {
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+}
+.slick-slide > div {
+  margin: 0 4px;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #38bdf8 !important;
+  font-size: 30px !important;
+}
+@media (max-width: 768px) {
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 25px !important;
+  }
+}
+
+.slick-dots li.slick-active button:before {
+  color: #f250a5 !important;
+}
+.slick-dots li button:before {
+  color: #f250a5 !important;
+  opacity: 0.5;
+}
+
+.cyberpunk-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.cyberpunk-checkbox:before {
+  content: "";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cyberpunk-checkbox:checked:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cyberpunk-checkbox-label {
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.cyberpunk-checkbox-label.small {
+  font-size: 14px;
+}
+
+.cyberpunk-checkbox-label.small .cyberpunk-checkbox {
+  width: 15px;
+  height: 15px;
+}
+.cyberpunk-checkbox-label.small .cyberpunk-checkbox::before {
+  width: 9px;
+  height: 9px;
+}
