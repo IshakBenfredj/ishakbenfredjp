@@ -7,6 +7,7 @@ import comment from "../assets/comment.png";
 import nf from "../assets/404.png";
 import man from "../assets/man.png";
 import woman from "../assets/woman.png";
+import cv from "../assets/DJILALI BENFREDJ ISHAK CV.pdf";
 
 const files = {
   logol,
@@ -18,5 +19,6 @@ const files = {
   nf,
   man,
   woman,
+  cv,
 };
 export default files;
