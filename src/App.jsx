@@ -9,8 +9,14 @@ import Lessons from "./pages/Lessons";
 import Terms from "./pages/Terms";
 import ServiceDet from "./pages/ServiceDet";
 import Comments from "./pages/Comments";
+import NotFound from "./components/NotFound";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <Providers>
       <Navbar />
@@ -21,6 +27,7 @@ function App() {
         <Route path="/comments" element={<Comments />} />
         <Route path="/terms_of_work" element={<Terms />} />
         <Route path="/:name/:id" element={<ServiceDet />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Providers>

@@ -4,6 +4,8 @@ import landingBg from "../assets/landingBg.png";
 import about1 from "../assets/about1.jpg";
 import about2 from "../assets/about2.jpg";
 import comment from "../assets/comment.png";
+import nf from "../assets/404.png";
+
 const files = {
   logol,
   logod,
@@ -11,5 +13,6 @@ const files = {
   about1,
   about2,
   comment,
+  nf
 };
 export default files;
