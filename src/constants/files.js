@@ -5,6 +5,8 @@ import about1 from "../assets/about1.jpg";
 import about2 from "../assets/about2.jpg";
 import comment from "../assets/comment.png";
 import nf from "../assets/404.png";
+import man from "../assets/man.png";
+import woman from "../assets/woman.png";
 
 const files = {
   logol,
@@ -13,6 +15,8 @@ const files = {
   about1,
   about2,
   comment,
-  nf
+  nf,
+  man,
+  woman,
 };
 export default files;

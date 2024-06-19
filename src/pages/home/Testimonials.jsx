@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import Loading from "../../components/Loading";
 import { Lang } from "../../context/Providers";
+import files from "../../constants/files";
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState([]);
@@ -75,12 +76,12 @@ export default function Testimonials() {
                 <div className="flex items-center gap-2">
                   {testimonial.gender === "male" ? (
                     <img
-                      src="/man.png"
+                      src={files.man}
                       className="testimonialImg p-2 border-primary"
                     />
                   ) : (
                     <img
-                      src="/woman.png"
+                      src={files.woman}
                       className="testimonialImg border-secondary"
                     />
                   )}
@@ -108,9 +109,7 @@ export default function Testimonials() {
 
 const TestimonialsLoading = () => {
   return (
-    <div
-      className="bg-gray-200 dark:bg-gray-100 p-2 rounded-xl relative animate-pulse"
-    >
+    <div className="bg-gray-200 dark:bg-gray-100 p-2 rounded-xl relative animate-pulse">
       <div className="flex items-center gap-2">
         <div className="testimonialImg md:h-10 h-8 bg-slate-300 dark:bg-slate-300"></div>
         <h4 className={`mb-1 h-4 w-2/3 bg-slate-300`}></h4>
