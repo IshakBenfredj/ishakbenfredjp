@@ -9,6 +9,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
 import {Link} from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 export default function SocialMedia({ classes }) {
   const socialMedia = [
     {
@@ -29,7 +30,7 @@ export default function SocialMedia({ classes }) {
     },
     {
       icon: <FaLinkedin />,
-      path: "https://www.linkedin.com/in/ishak-benfredj-20a4b4226/",
+      path: "https://www.linkedin.com/in/ishak-benfredj/",
     },
     {
       icon: <FaGithub />,
