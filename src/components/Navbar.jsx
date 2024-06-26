@@ -1,4 +1,4 @@
-import {Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AiOutlineAppstore } from "react-icons/ai";
@@ -15,7 +15,7 @@ export default function Navbar() {
   const pathname = useLocation().pathname;
   const navRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
-  const { data,mounted } = useContext(Lang);
+  const { data, mounted } = useContext(Lang);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,12 +46,13 @@ export default function Navbar() {
     return () => {
       document.body.removeEventListener("click", closeNavOnOutsideClick);
     };
-  }, [openNav]);
+  }, []);
 
   const openNavFunc = () => {
     setOpenNav(true);
     document.body.classList.add("openNav");
   };
+
   const closeNavFunc = () => {
     if (openNav) {
       setOpenNav(false);
@@ -62,13 +63,15 @@ export default function Navbar() {
   return (
     <div
       ref={navRef}
-      className={`z-50 fixed right-0 left-0 ${scrolled && " backdrop-blur"} ${mounted ? 'hidden' : 'block'}`}
+      className={`z-50 fixed right-0 left-0 ${scrolled && " backdrop-blur"} ${
+        mounted ? "hidden" : "block"
+      }`}
     >
       <div className="container flex md:justify-around justify-between items-center z-50">
         <Logo />
         {!openNav ? (
           <AiOutlineAppstore
-            onClick={openNavFunc}
+            onClick={()=> openNavFunc()}
             className="text-gray-950 cursor-pointer dark:text-white md:hidden"
             size={34}
           />
@@ -79,7 +82,7 @@ export default function Navbar() {
             size={34}
           />
         )}
-        <nav className={`resNav ${openNav && "open"}`}>
+        <nav className={`resNav ${openNav ? "open" : ""}`}>
           <div className="nav">
             <Link
               to="/"
@@ -109,7 +112,7 @@ export default function Navbar() {
               to="/contact"
               onClick={closeNavFunc}
               className={`px-2 py-1 rounded-lg font-semibold transition-all capitalize ${
-                pathname === "/contact" 
+                pathname === "/contact"
                   ? "text-gray-100 dark:text-gray-900 bg-gray-950 dark:bg-white font-semibold"
                   : "hover:text-secondary"
               }`}
